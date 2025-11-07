@@ -45,7 +45,8 @@ public class AccountController {
         } else {
             model.addAttribute("message", "Користувач із таким іменем вже існує.");
         }
-
         return "account/register";
     }
+
+
 }
