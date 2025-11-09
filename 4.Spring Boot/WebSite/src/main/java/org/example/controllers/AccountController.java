@@ -37,7 +37,7 @@ public class AccountController {
 
         String fileName = fileService.load(imageFile);
 
-        boolean success = accountService.registerUser(username, password, fileName);
+        boolean success = accountService.registerUser(username, password, fileName,request);
         if (success) {
             model.addAttribute("message", "Реєстрація успішна!");
 
@@ -47,6 +47,12 @@ public class AccountController {
         }
         return "account/register";
     }
+
+    @GetMapping("/login")
+    public String login() {
+        return "account/login";
+    }
+
 
 
 }
